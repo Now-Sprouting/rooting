@@ -5,14 +5,14 @@ export enum ButtonSize {
     Large = 'lg',
     Small = 'sm'
 }
-
+// 枚举
 export enum ButtonType {
     Primary = 'primary',
     Default = 'default',
     Danger = 'danger',
     Link = 'link'
 }
-
+// 接口(定义传入的属性时事先声明)
 interface BaseButtonProps {
     className?: string;
     disabled?: boolean;
@@ -21,6 +21,7 @@ interface BaseButtonProps {
     children: React.ReactNode;
     href?: string;
 }
+// 类型别名
 type NativeButtonProps = BaseButtonProps & ButtonHTMLAttributes<HTMLElement>
 type AnchorButtonProps = BaseButtonProps & AnchorHTMLAttributes<HTMLElement>
 export type ButtonProps = Partial<NativeButtonProps & AnchorButtonProps>
