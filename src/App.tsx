@@ -4,7 +4,6 @@ import React from 'react';
 import Button, { ButtonType, ButtonSize } from './components/Button/button'
 import Alert from './components/Alert/alert'
 import Menu from './components/Menu/menu'
-import menuTtem from './components/Menu/menuTtem'
 import MenuItem from './components/Menu/menuTtem';
 function App() {
   //   const codeString = `<Button btnType={ButtonType.Default} size={ButtonSize.Large}>Default</Button>
@@ -41,17 +40,23 @@ function App() {
 
       {/* ---------------------------- */}
       <h1>Menu</h1>
-      <Menu onSelect={(index) => {alert(index)}}>
-        <MenuItem index={0}>
-          首页
-        </MenuItem>
-        <MenuItem index={1}>
-          关于
-        </MenuItem>
-        <MenuItem index={2}>
-          加入我们
-        </MenuItem>
-      </Menu>
+      <div style={{ marginLeft: '20px' }} >
+        <Menu mode='horizontal'  onSelect={(index) => {
+          console.log(index);
+        }}>
+          <MenuItem  label='首页'>
+            首页管理
+          </MenuItem>
+          <MenuItem label='关于'>
+            关于管理
+          </MenuItem>
+          <MenuItem label='加入我们'>
+          </MenuItem>
+          <MenuItem label='加入我们1'>
+          加入我们1
+          </MenuItem>
+        </Menu>
+      </div>
       {/* <div style={{width: '1000px', margin: 'auto'}}>
         <SyntaxHighlighter language="jsx" style={shadesOfPurple}>
           {codeString}

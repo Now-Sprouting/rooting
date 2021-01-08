@@ -5,33 +5,35 @@ import {MenuContext} from './menu'
 
 // 属性接口
 export interface MenuItemProps {
-    index: number;
+    label: string;
+    index?: number;
     disable?: boolean;
     className?: string;
     style?: React.CSSProperties
 }
 const MenuItem: React.FC<MenuItemProps> = (props) => {
     const {
+        label,
         index,
         disable,
         className,
         style,
-        children
     } = props
     const context = useContext(MenuContext)
-    const handleClick = (index: number) => {
-        if (context.onSelect && !disable) {
+    const handleClick = (index?: number) => {
+        if (context.onSelect && !disable && typeof index === 'number') {
             context.onSelect(index)
         }
     }
-    const classes = classNames('root-menuItem', className, {
-        'root-menuItem-disable': disable === true, 
+    const classes = classNames('rooting-menuItem', className, {
+        'disable': disable === true, 
         'active': index === context.index
     })
     return (
         <li className={classes} style={style} onClick={() => {handleClick(index)}}>
-            {children}
+            {label}
         </li>
     )
 }
+MenuItem.displayName = 'MenuItem'
 export default MenuItem

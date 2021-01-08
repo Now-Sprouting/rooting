@@ -1,0 +1,71 @@
+.rooting-menu {
+    display: flex;
+    position: relative;
+    flex-wrap: wrap;
+    padding-left: 0;
+    list-style: none;
+    border-bottom: $menu-border-width solid $menu-border-color;
+    box-shadow: $menu-box-shadow;
+    >.rooting-menuItem {
+        padding: $menu-item-padding-y $menu-item-padding-x;
+        cursor: pointer;
+        &:hover, &:focus {
+          text-decoration: none;
+        }
+        &:hover {
+          color: $menu-item-active-color;
+        }
+        &.active {
+          font-weight: $menu-item-active-font-weight;
+          color: $menu-item-active-color;
+          border-bottom: $menu-item-active-border-width solid $menu-item-active-color;
+        }
+        &.disable {
+          font-weight: $menu-item-font-weight;
+          color: $menu-item-disabled-color;
+          pointer-events: none;
+          border-bottom: none;
+          cursor: default;
+        }
+      }
+}
+.rooting-menu-vertical {
+    flex-direction: column;
+    border-bottom: 0px;
+    border-right: $menu-border-width solid $menu-border-color;
+    box-shadow: $menu-box-shadow;
+    border-bottom: none;
+    box-shadow: none;
+    // 内容区
+    .menu-content {
+      position: absolute;
+      margin-left: 200px;
+    }
+    >.rooting-menuItem {
+      border-left: $menu-item-active-border-width solid transparent;
+      max-width: 200px;
+      &.active {
+        border-bottom: 0px;
+        border-left: $menu-item-active-border-width solid $menu-item-active-color;
+      }
+      &:hover {
+        border-bottom: 0px;
+      }
+      &.disable {
+        font-weight: $menu-item-font-weight;
+        color: $menu-item-disabled-color;
+        pointer-events: none;
+        border-left: none;
+        cursor: default;
+      }
+    }
+}
+.rooting-menu-horizontal {
+    .menu-content {
+      position: absolute;
+      margin-top: 50px;
+    }
+}
+.displayContant.menu-content{
+  display: none!important;
+}

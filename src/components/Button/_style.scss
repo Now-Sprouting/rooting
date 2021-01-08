@@ -1,7 +1,7 @@
 .btn {
     position: relative;
     display: inline-block;
-    font-weight: $btn-font-weight;
+    font-weight: $font-weight-base;
     line-height: $btn-line-height;
     color: $body-color;
     white-space: nowrap;
@@ -9,6 +9,8 @@
     vertical-align: middle;
     background-image: none;
     outline: 0;
+    text-transform: uppercase;
+    font-family: "Roboto", "Helvetica", "Arial", sans-serif;
     @include button-size( $btn-padding-y,  $btn-padding-x,  $btn-font-size,  $border-radius);
     border: $btn-border-width solid transparent;
     box-shadow: $btn-box-shadow;
@@ -26,20 +28,22 @@
 }
 .btn-lg {
   @include button-size($btn-padding-y-lg, $btn-padding-x-lg, $btn-font-size-lg, $btn-border-radius-lg);
+  font-weight: $font-weight-bold;
 }
 .btn-sm {
   @include button-size($btn-padding-y-sm, $btn-padding-x-sm, $btn-font-size-sm, $btn-border-radius-sm);
+  font-weight: $font-weight-light;
 }
 
 .btn-primary {
-  @include button-style($primary, $primary, $white)
+  @include button-style($primary, $white, $primary-hover)
 }
 .btn-danger {
-  @include button-style($danger, $danger, $white)
+  @include button-style($danger, $white, $danger-hover)
 }
 
 .btn-default {
-  @include button-style($white, $gray-400, $body-color, $white, $primary, $primary)
+  @include button-style($default, $black, $default-hover)
 }
 
 .btn-link {

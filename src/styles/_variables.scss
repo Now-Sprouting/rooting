@@ -1,4 +1,3 @@
-$white:    #fff !default;
 $gray-100: #f8f9fa !default;
 $gray-200: #e9ecef !default;
 $gray-300: #dee2e6 !default;
@@ -8,27 +7,39 @@ $gray-600: #6c757d !default;
 $gray-700: #495057 !default;
 $gray-800: #343a40 !default;
 $gray-900: #212529 !default;
-$black:    #000 !default;
-
-$blue:    #0d6efd !default;
 $indigo:  #6610f2 !default;
 $purple:  #6f42c1 !default;
 $pink:    #d63384 !default;
-$red:     #dc3545 !default;
 $orange:  #fd7e14 !default;
 $yellow:  #fadb14 !default;
 $green:   #52c41a !default;
 $teal:    #20c997 !default;
 $cyan:    #17a2b8 !default;
 
+$white:    #fff !default;
+$black:    #000 !default;
+$blue:    #1976d3 !default;
+$blue-hover: #115293!default;
+$red:     #dc004e !default;
+$red-hover: #9a0036!default;
+$gray:     #e0e0e0!default;
+$gray-hover: #d5d5d5!default;
+
+
 $primary:       $blue !default;
+$primary-hover: $blue-hover !default;
+$danger:        $red !default;
+$danger-hover:  $red-hover !default;
+$default:       $gray !default;
+$default-hover: $gray-hover !default;
+
 $secondary:     $gray-600 !default;
 $success:       $green !default;
 $info:          $cyan !default;
 $warning:       $yellow !default;
-$danger:        $red !default;
 $light:         $gray-100 !default;
 $dark:          $gray-800 !default;
+$gray:          $gray !default;
 
 $theme-colors: 
 (
@@ -42,17 +53,17 @@ $theme-colors:
   "dark":       $dark
 );
 
-$font-family-sans-serif:      -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji" !default;
+$font-family-sans-serif:      Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji" !default;
 $font-family-monospace:       SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace !default;
 $font-family-base:            $font-family-sans-serif !default;
 
-// 字体大小
+//$ 字体大小
 $font-size-base:              1rem !default; // Assumes the browser default, typically `16px`
 $font-size-lg:                $font-size-base * 1.25 !default;
 $font-size-sm:                $font-size-base * .875 !default;
 $font-size-root:              null !default;
 
-// 字重
+//$ 字重
 $font-weight-lighter:         lighter !default;
 $font-weight-light:           300 !default;
 $font-weight-normal:          400 !default;
@@ -60,12 +71,12 @@ $font-weight-bold:            700 !default;
 $font-weight-bolder:          bolder !default;
 $font-weight-base:            $font-weight-normal !default;
 
-// 行高
+//$ 行高
 $line-height-base:            1.5 !default;
 $line-height-lg:              2 !default;
 $line-height-sm:              1.25 !default;
 
-// 标题大小
+//$ 标题大小
 $h1-font-size:                $font-size-base * 2.5 !default;
 $h2-font-size:                $font-size-base * 2 !default;
 $h3-font-size:                $font-size-base * 1.75 !default;
@@ -73,18 +84,18 @@ $h4-font-size:                $font-size-base * 1.5 !default;
 $h5-font-size:                $font-size-base * 1.25 !default;
 $h6-font-size:                $font-size-base !default;
 
-// 链接
+//$ 链接
 $link-color:                              $primary !default;
 $link-decoration:                         none !default;
 $link-hover-color:                        darken($link-color, 15%) !default;
 $link-hover-decoration:                   underline !default;
 
-// body
+//$ body
 $body-bg:                   $white !default;
 $body-color:                $gray-900 !default;
 $body-text-align:           null !default;
 
-// Spacing
+//$ Spacing
 $spacer: 1rem !default;
 
 $headings-margin-bottom:      $spacer / 2 !default;
@@ -94,11 +105,11 @@ $headings-font-weight:        500 !default;
 $headings-line-height:        1.2 !default;
 $headings-color:              null !default;
 
-// Paragraphs
+//$ Paragraphs
 
 $paragraph-margin-bottom:   1rem !default;
 
-// 字体其他部分 heading list hr 等等
+//$ 字体其他部分 heading list hr 等等
 $headings-margin-bottom:      $spacer / 2 !default;
 $headings-font-family:        null !default;
 $headings-font-style:         null !default;
@@ -152,16 +163,16 @@ $mark-bg:                     #fcf8e3 !default;
 
 $hr-margin-y:                 $spacer !default;
 
-// Code
+//$ Code
 
 $code-font-size:                    $small-font-size !default;
 $code-color:                        $pink !default;
 $pre-color:                         null !default;
 
-// options 可配置选项
+//$ options 可配置选项
 $enable-pointer-cursor-for-buttons:           true !default;
 
-// 边框 和 border radius
+//$ 边框 和 border radius
 
 $border-width:                1px !default;
 $border-color:                $gray-300 !default;
@@ -176,13 +187,13 @@ $box-shadow:                  0 .5rem 1rem rgba($black, .15) !default;
 $box-shadow-lg:               0 1rem 3rem rgba($black, .175) !default;
 $box-shadow-inset:            inset 0 1px 2px rgba($black, .075) !default;
 
-// 按钮
+//$ 按钮
 // 按钮基本属性
 $btn-font-weight:             400;
 $btn-padding-y:               .375rem !default;
 $btn-padding-x:               .75rem !default;
 $btn-font-family:             $font-family-base !default;
-$btn-font-size:               $font-size-base !default;
+$btn-font-size:               0.875rem !default;
 $btn-line-height:             $line-height-base !default;
 
 //不同大小按钮的 padding 和 font size
@@ -198,7 +209,8 @@ $btn-font-size-lg:            $font-size-lg !default;
 $btn-border-width:            $border-width !default;
 
 // 按钮其他
-$btn-box-shadow:              inset 0 1px 0 rgba($white, .15), 0 1px 1px rgba($black, .075) !default;
+$btn-box-shadow:              0px 3px 1px -2px rgba(0,0,0,0.2), 0px 2px 2px 0px rgba(0,0,0,0.14), 0px 1px 5px 0px rgba(0,0,0,0.12) !default;
+$btn-box-shadow-hover:        0px 2px 4px -1px rgba(0,0,0,0.2), 0px 4px 5px 0px rgba(0,0,0,0.14), 0px 1px 10px 0px rgba(0,0,0,0.12) !default;
 $btn-disabled-opacity:        .65 !default;
 
 // 链接按钮
@@ -214,18 +226,21 @@ $btn-border-radius-sm:        $border-radius-sm !default;
 
 $btn-transition:              color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out, box-shadow .15s ease-in-out !default;
 
-// menu
+
+
+//$ menu
 $menu-border-width:            $border-width !default;
 $menu-border-color:            $border-color !default;
 $menu-box-shadow:              inset 0 1px 0 rgba($white, .15), 0 1px 1px rgba($black, .075) !default;
-$menu-transition:              color .15s ease-in-out, border-color .15s ease-in-out !default;
 
 // menu-item
-$menu-item-padding-y:          .5rem !default;
-$menu-item-padding-x:          1rem !default;
-$menu-item-active-color:       $primary !default;
-$menu-item-active-border-width: 2px !default;
-$menu-item-disabled-color:     $gray-600 !default;
+$menu-item-padding-y:            .5rem !default;
+$menu-item-padding-x:            1rem !default;
+$menu-item-active-color:         $primary !default;
+$menu-item-font-weight:          $font-weight-normal !default;
+$menu-item-active-font-weight:   $font-weight-bold !default;
+$menu-item-active-border-width:  3px !default;
+$menu-item-disabled-color:       $gray-600 !default;
 
 //sub-menu
 //submenu
