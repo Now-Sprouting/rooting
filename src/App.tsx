@@ -5,6 +5,11 @@ import Button, { ButtonType, ButtonSize } from './components/Button/button'
 import Alert from './components/Alert/alert'
 import Menu from './components/Menu/menu'
 import MenuItem from './components/Menu/menuTtem';
+import Icon from './components/Icon/icon'
+
+import { library } from '@fortawesome/fontawesome-svg-core'
+import { fas } from '@fortawesome/free-solid-svg-icons'
+library.add(fas)
 function App() {
   //   const codeString = `<Button btnType={ButtonType.Default} size={ButtonSize.Large}>Default</Button>
   // <Button btnType={ButtonType.Danger}>Danger</Button>
@@ -34,17 +39,17 @@ function App() {
         <Alert title='123'></Alert>
         <hr />
       </div>
-
-
-
-
       {/* ---------------------------- */}
+
+
+
+
       <h1>Menu</h1>
       <div style={{ marginLeft: '20px' }} >
-        <Menu mode='horizontal'  onSelect={(index) => {
+        <Menu mode='horizontal' onSelect={(index) => {
           console.log(index);
         }}>
-          <MenuItem  label='首页'>
+          <MenuItem label='首页'>
             首页管理
           </MenuItem>
           <MenuItem label='关于'>
@@ -53,9 +58,18 @@ function App() {
           <MenuItem label='加入我们'>
           </MenuItem>
           <MenuItem label='加入我们1'>
-          加入我们1
+            加入我们1
           </MenuItem>
         </Menu>
+      </div>
+      {/* ---------------------------- */}
+
+
+      <div style={{ marginTop: '100px' }}>
+        <h1>icon</h1>
+        <Icon icon='coffee' theme='primary' size='5x' border ></Icon>
+        <Icon icon='spinner' theme='default' size='5x' ></Icon>
+        <Icon icon='coffee' theme='danger' size='5x'></Icon>
       </div>
       {/* <div style={{width: '1000px', margin: 'auto'}}>
         <SyntaxHighlighter language="jsx" style={shadesOfPurple}>

@@ -44,11 +44,12 @@ $gray:          $gray !default;
 $theme-colors: 
 (
   "primary":    $primary,
+  "default":    $default,
+  "danger":     $danger,
   "secondary":  $secondary,
   "success":    $success,
   "info":       $info,
   "warning":    $warning,
-  "danger":     $danger,
   "light":      $light,
   "dark":       $dark
 );
