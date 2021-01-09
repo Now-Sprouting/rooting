@@ -227,7 +227,11 @@ $btn-border-radius-sm:        $border-radius-sm !default;
 
 $btn-transition:              color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out, box-shadow .15s ease-in-out !default;
 
-
+// $alert
+$alert-background-default:     #E8F4FD!default;
+$alert-background-success:     #EDF7ED!default;
+$alert-background-warning:     #FFF4E5!default;
+$alert-background-error:       #FDECEA!default;
 
 //$ menu
 $menu-border-width:            $border-width !default;

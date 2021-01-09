@@ -1,14 +1,59 @@
-.alertMain {
+.rooting-alert {
     position: relative;
-    background-color: $primary;
     padding: 6px 16px;
-    font-size: 0.875rem;
-    font-family: "Roboto", "Helvetica", "Arial", sans-serif;
-    font-weight: 400;
-    line-height: 1.43;
+    background-color: $alert-background-default;
     border-radius: 4px;
-    color: rgb(97, 26, 21);
+    .rooting-alertTop {
+        padding: 8px 0;
+        display: flex;
+        justify-content: space-between;
+        align-rooting-alert-items: center;
+        .alert-top-left {
+            display: flex;
+            align-rooting-alert-items: center;
+            .alert-title {
+                margin-left: 15px;
+            }
+        }
+        .alert-close {
+            width: 24px;
+            text-align: center;
+            border-radius: 50%;
+            &:hover {
+                cursor: pointer;
+                background-color: $default;
+            }
+        }
+        .alert-close-none {
+            display: none;
+        }
+    }
 }
-.alertTitle {
-    padding: 8px 0;
+.rooting-alert-success {
+    background-color: $alert-background-success;
 }
+.rooting-alert-error {
+    background-color: $alert-background-error;
+}
+.rooting-alert-warning {
+    background-color: $alert-background-warning;
+}
+
+
+
+
+.rooting-alert-item-exit {
+    opacity: 1;
+    transform: scale(1);
+  }
+  
+.rooting-alert-item-exit-active {
+    opacity: 0;
+    transform: scale(.5);
+    transition: opacity 300ms, transform 300ms;
+}
+  
+.rooting-alert-item-exit-done {
+    opacity: 0;
+}
+  

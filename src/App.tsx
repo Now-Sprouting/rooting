@@ -11,6 +11,9 @@ import { library } from '@fortawesome/fontawesome-svg-core'
 import { fas } from '@fortawesome/free-solid-svg-icons'
 library.add(fas)
 function App() {
+  const handleClick = (e: any, num: number) => {
+    console.log(e, num);
+  }
   //   const codeString = `<Button btnType={ButtonType.Default} size={ButtonSize.Large}>Default</Button>
   // <Button btnType={ButtonType.Danger}>Danger</Button>
   // <Button btnType={ButtonType.Primary} size={ButtonSize.Small}>Primary</Button>
@@ -22,7 +25,7 @@ function App() {
       <div>
         <h1>button</h1>
         <Button>Default</Button>
-        <Button btnType={ButtonType.Default} size={ButtonSize.Large} onClick={(e) => { console.log(e.target) }}>Default</Button>
+        <Button btnType={ButtonType.Default} size={ButtonSize.Large} onClick={(e) => { console.log(e.target, 1) }}>Default</Button>
         <Button btnType={ButtonType.Danger}>Danger</Button>
         <Button btnType={ButtonType.Primary} size={ButtonSize.Small}>Primary</Button>
         <Button btnType={ButtonType.Primary} size={ButtonSize.Small} disabled={true}>Disable</Button>
@@ -36,7 +39,10 @@ function App() {
 
       <div style={{ width: '1000px', padding: '50px' }}>
         <h1>alert</h1>
-        <Alert title='123'></Alert>
+        <Alert title='This is an info alert — check it out!' type='success' onClose={(e: any)=> {handleClick(e, 1)}}></Alert>
+        <Alert title='This is an info alert — check it out!' type='info' closable={true}></Alert>
+        <Alert title='This is an info alert — check it out!' type='warning' closable={true}></Alert>
+        <Alert title='This is an info alert — check it out!' type='error' closable={true}></Alert>
         <hr />
       </div>
       {/* ---------------------------- */}

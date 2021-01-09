@@ -15,10 +15,6 @@
       background: $hover-background;
       box-shadow: $btn-box-shadow-hover;
     }
-    &:focus,
-    &.focus {
-      background: $hover-background;
-    }
     &:disabled,
     &.disabled {
       color: $color;
