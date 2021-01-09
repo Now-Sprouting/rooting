@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 // import SyntaxHighlighter from 'react-syntax-highlighter';
 // import { shadesOfPurple } from 'react-syntax-highlighter/dist/esm/styles/hljs';
 import Button, { ButtonType, ButtonSize } from './components/Button/button'
@@ -6,11 +6,14 @@ import Alert from './components/Alert/alert'
 import Menu from './components/Menu/menu'
 import MenuItem from './components/Menu/menuTtem';
 import Icon from './components/Icon/icon'
+import Input from './components/Input/input'
 
 import { library } from '@fortawesome/fontawesome-svg-core'
 import { fas } from '@fortawesome/free-solid-svg-icons'
 library.add(fas)
+
 function App() {
+  const [state, setstate] = useState('')
   const handleClick = (e: any, num: number) => {
     console.log(e, num);
   }
@@ -39,7 +42,7 @@ function App() {
 
       <div style={{ width: '1000px', padding: '50px' }}>
         <h1>alert</h1>
-        <Alert title='This is an info alert — check it out!' type='success' onClose={(e: any)=> {handleClick(e, 1)}}></Alert>
+        <Alert title='This is an info alert — check it out!' type='success' onClose={(e: any) => { handleClick(e, 1) }}></Alert>
         <Alert title='This is an info alert — check it out!' type='info' closable={true}></Alert>
         <Alert title='This is an info alert — check it out!' type='warning' closable={true}></Alert>
         <Alert title='This is an info alert — check it out!' type='error' closable={true}></Alert>
@@ -67,6 +70,21 @@ function App() {
             加入我们1
           </MenuItem>
         </Menu>
+        <Menu mode='vertical' onSelect={(index) => {
+          console.log(index);
+        }}>
+          <MenuItem label='首页'>
+            首页管理
+          </MenuItem>
+          <MenuItem label='关于'>
+            关于管理
+          </MenuItem>
+          <MenuItem label='加入我们'>
+          </MenuItem>
+          <MenuItem label='加入我们1'>
+            加入我们1
+          </MenuItem>
+        </Menu>
       </div>
       {/* ---------------------------- */}
 
@@ -77,6 +95,44 @@ function App() {
         <Icon icon='spinner' theme='default' size='5x' ></Icon>
         <Icon icon='coffee' theme='danger' size='5x'></Icon>
       </div>
+
+
+
+      <div style={{ marginTop: '100px' }}></div>
+      <h1>Input</h1>
+      <Input
+        value={state}
+        style={{ marginLeft: '20px' }}
+        icon='search'
+        onChange={(e) => {
+          console.log(e.target.value);
+          setstate(e.target.value)
+        }}
+      ></Input>
+
+      <Input
+        style={{ marginLeft: '20px' }}
+        // prepend='Http://'
+        // append='.com'
+        icon='search'
+        size='lg'
+        onChange={(e) => {
+          console.log(e.nativeEvent.currentTarget);
+        }}
+      ></Input>
+
+      <Input
+        placeholder='12'
+        style={{ marginLeft: '20px' }}
+        icon='search'
+        // prepend='Http://'
+        // append='.com'
+        size='sm'
+        onChange={(e) => {
+          console.log(e.nativeEvent.currentTarget);
+        }}
+      ></Input>
+      <div>123</div>
       {/* <div style={{width: '1000px', margin: 'auto'}}>
         <SyntaxHighlighter language="jsx" style={shadesOfPurple}>
           {codeString}
@@ -84,6 +140,7 @@ function App() {
       </div>
       <div onClick={(e) => {console.log(e.nativeEvent.currentTarget)}}>123</div> */}
     </div>
+
   );
 }
 
