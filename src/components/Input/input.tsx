@@ -5,7 +5,7 @@ import classNames from 'classnames'
 
 type InputSize = 'lg' | 'sm'
 // Omit 忽略掉 Input原有属性的 size
-interface BaseInputProps extends Omit<InputHTMLAttributes<HTMLElement>, 'size'> {
+export interface InputProps extends Omit<InputHTMLAttributes<HTMLElement>, 'size'> {
     disabled?: boolean;
     size?: InputSize;
     icon?: IconProp;
@@ -13,7 +13,7 @@ interface BaseInputProps extends Omit<InputHTMLAttributes<HTMLElement>, 'size'> 
     append?: string;
     onChange?: (e: ChangeEvent<HTMLInputElement>) => void
 }
-const Input: React.FC<BaseInputProps> = (props) => {
+const Input: React.FC<InputProps> = (props) => {
     const { disabled, size, icon, prepend, append, className, style, ...restProps } = props
     const fixControlledValue = (value: any) => {
         if (typeof value === 'undefined' || value === null) {

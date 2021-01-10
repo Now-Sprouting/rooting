@@ -103,7 +103,6 @@ function App() {
       <Input
         value={state}
         style={{ marginLeft: '20px' }}
-        icon='search'
         onChange={(e) => {
           console.log(e.target.value);
           setstate(e.target.value)
@@ -132,7 +131,6 @@ function App() {
           console.log(e.nativeEvent.currentTarget);
         }}
       ></Input>
-      <div>123</div>
       {/* <div style={{width: '1000px', margin: 'auto'}}>
         <SyntaxHighlighter language="jsx" style={shadesOfPurple}>
           {codeString}

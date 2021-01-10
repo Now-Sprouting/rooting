@@ -1,0 +1,23 @@
+.rooting-auto-complete {
+    position: relative;
+  display: inline-block;
+  li {
+    list-style: none;
+  }
+  .rooting-autoList {
+    width: 100%;
+    position: absolute;
+    z-index: 9999;
+    background-color: #fff;
+    border: 1px solid #dee2e6;
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.12), 0 0 6px 0 rgba(0, 0, 0, 0.04);
+    li {
+      padding: 0.5rem 1rem;
+      cursor: pointer;
+      &:hover {
+          color: $primary;
+          font-weight: 600;
+      }
+    }
+  }
+}
