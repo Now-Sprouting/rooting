@@ -1,34 +1,56 @@
 import React from 'react';
-import AutoComplete from './components/AutoComplete/autoComplete'
+import AutoComplete, { DataSourceType } from './components/AutoComplete/autoComplete'
 
+
+interface PlayerlistWithNumberProps {
+    value: string;
+    number: number;
+
+}
 function App1() {
     const Playerlist = ['James', 'Curry', 'Durant', 'Irving', 'Davis', 'George', 'Harden', 'Antetokounmpo', 'DeRozan', 'Embiid', 'Love', 'Green', 'Thompson', 'Butler', 'Lillard']
 
     const PlayerlistWithNumber = [
-        { name: 'James', number: 23 },
-        { name: 'Curry', number: 30 },
-        { name: 'Durant', number: 35 },
-        { name: 'Irving', number: 2 },
-        { name: 'Davis', number: 23 },
-        { name: 'George', number: 13 },
-        { name: 'Harden', number: 13 },
-        { name: 'Antetokounmpo', number: 34 },
-        { name: 'DeRozan', number: 10 },
-        { name: 'Embiid', number: 21 },
-        { name: 'Love', number: 0 },
-        { name: 'Green', number: 23 },
-        { name: 'Thompson', number: 11 },
-        { name: 'Butler', number: 23 },
-        { name: 'Lillard', number: 0 },
+        { value: 'James', number: 23 },
+        { value: 'Curry', number: 30 },
+        { value: 'Durant', number: 35 },
+        { value: 'Irving', number: 2 },
+        { value: 'Davis', number: 23 },
+        { value: 'George', number: 13 },
+        { value: 'Harden', number: 13 },
+        { value: 'Antetokounmpo', number: 34 },
+        { value: 'DeRozan', number: 10 },
+        { value: 'Embiid', number: 21 },
+        { value: 'Love', number: 0 },
+        { value: 'Green', number: 23 },
+        { value: 'Thompson', number: 11 },
+        { value: 'Butler', number: 23 },
+        { value: 'Lillard', number: 0 },
     ]
+    // const handleFetch = (input: string) => {
+    //     return Playerlist.filter(item => {
+    //         return item.includes(input)
+    //     }).map(item => { return { value: item } })
+    // }
+    // const handleRender = (item: string) => {
+    //     return (
+    //         <h1>球员: {item}</h1>
+    //     )
+    // }
+
+
     const handleFetch = (input: string) => {
-        return Playerlist.filter(item => {
-            return item.includes(input)
+        return PlayerlistWithNumber.filter(item => {
+            return item.value.includes(input)
         })
     }
-    const handleRender = (item: string) => {
+    const handleRender = (item: DataSourceType) => {
+        const itemWithNumber = item as DataSourceType<PlayerlistWithNumberProps>
         return (
-            <h1>球员: {item}</h1>
+            <>
+                <span style={{marginRight: '20px'}}>球员: {itemWithNumber.value}</span>
+                <span>号码: {itemWithNumber.number}</span>
+            </>
         )
     }
     return (
