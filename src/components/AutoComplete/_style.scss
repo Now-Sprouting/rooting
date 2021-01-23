@@ -1,23 +1,46 @@
 .rooting-auto-complete {
-    position: relative;
+  position: relative;
   display: inline-block;
   li {
     list-style: none;
   }
   .rooting-autoList {
+    overflow-x: hidden;
+    overflow-y: auto;
+    max-height: 400px;
     width: 100%;
     position: absolute;
     z-index: 9999;
     background-color: #fff;
     border: 1px solid #dee2e6;
     box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.12), 0 0 6px 0 rgba(0, 0, 0, 0.04);
+    .hightLight {
+      color: $primary;
+      font-weight: 600;
+    }
     li {
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
       padding: 0.5rem 1rem;
       cursor: pointer;
       &:hover {
-          color: $primary;
-          font-weight: 600;
+        color: $primary;
+        font-weight: 600;
       }
     }
+  }
+  .rooting-autoList::-webkit-scrollbar {
+    width: 6px;
+  }
+
+  .rooting-autoList::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    background: rgba($primary, 0.5);
+  }
+
+  .rooting-autoList::-webkit-scrollbar-track {
+    border-radius: 0;
+    background: rgba($primary, 0.2);
   }
 }

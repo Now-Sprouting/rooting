@@ -7,6 +7,11 @@ interface PlayerlistWithNumberProps {
     number: number;
 
 }
+interface GithubNUmberProps {
+    value: string;
+    url: string;
+
+}
 function App1() {
     const Playerlist = ['James', 'Curry', 'Durant', 'Irving', 'Davis', 'George', 'Harden', 'Antetokounmpo', 'DeRozan', 'Embiid', 'Love', 'Green', 'Thompson', 'Butler', 'Lillard']
 
@@ -39,17 +44,36 @@ function App1() {
     // }
 
 
-    const handleFetch = (input: string) => {
-        return PlayerlistWithNumber.filter(item => {
-            return item.value.includes(input)
-        })
+    // const handleFetch = (input: string) => {
+    //     return PlayerlistWithNumber.filter(item => {
+    //         return item.value.includes(input)
+    //     })
+    // }
+    // const handleRender = (item: DataSourceType) => {
+    //     const itemWithNumber = item as DataSourceType<PlayerlistWithNumberProps>
+    //     return (
+    //         <>
+    //             <span style={{marginRight: '20px'}}>球员: {itemWithNumber.value}</span>
+    //             <span>号码: {itemWithNumber.number}</span>
+    //         </>
+    //     )
+    // }
+
+    // 异步
+    const handleFetch = (item: string) => {
+        return fetch('https://api.github.com/search/users?q=' + item)
+            .then(res => res.json())
+            .then(({ items }) => {
+                console.log(items);
+                return items.slice(0, 20).map((item: any) => ({ value: item.login, ...item }))
+            })
     }
-    const handleRender = (item: DataSourceType) => {
-        const itemWithNumber = item as DataSourceType<PlayerlistWithNumberProps>
+     const handleRender = (item: DataSourceType) => {
+        const itemWithNumber = item as DataSourceType<GithubNUmberProps>
         return (
             <>
-                <span style={{marginRight: '20px'}}>球员: {itemWithNumber.value}</span>
-                <span>号码: {itemWithNumber.number}</span>
+                <span style={{marginRight: '20px'}}>name: {itemWithNumber.value}</span>
+                <span>url: {itemWithNumber.url}</span>
             </>
         )
     }
